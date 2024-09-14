@@ -1,0 +1,27 @@
+{
+    "python.pythonPath": "venv/Scripts/python.exe", // Adjust for your environment
+    "python.analysis.extraPaths": [
+        "./src"
+    ], // Adjust for where your code is located
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--max-line-length=88"
+    ],
+    "editor.formatOnSave": true, // Automatically format your code on save
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "files.exclude": {
+        "**/__pycache__": true, // Exclude __pycache__ directories from the file explorer
+        "**/.git": true, // Exclude .git directory from the file explorer
+        "**/venv": true // Exclude venv directory from the file explorer
+    },
+    "git.ignoreLimitWarning": true,
+    "workbench.colorTheme": "Visual Studio Dark", // Set your preferred theme
+    "python.testing.pytestEnabled": true, // Enable pytest for testing
+    "python.testing.unittestEnabled": false, // Disable unittest if not using it
+    "python.testing.pytestArgs": [
+        "tests"
+    ]
+}

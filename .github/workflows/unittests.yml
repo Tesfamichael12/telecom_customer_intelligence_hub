@@ -1,0 +1,40 @@
+name: Run Unit Tests
+
+on:
+  push:
+    branches:
+      - task-1
+  pull_request:
+    branches:
+      - task-1
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        python-version: ['3.12']  
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}     
+          
+      - name: Print Python Version
+        run: python --version
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Print Installed Packages
+        run: pip freeze
+
+      - name: Run tests
+        run: |
+          python -m unittest discover -s tests
