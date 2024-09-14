@@ -1,107 +1,49 @@
-# telecom_customer_intelligence_hub
-A client is interested in purchasing TellCo, an existing mobile service provider in the Republic of Pefkakia. TellCo’s current owners have been willing to share their financial information but have never employed anyone to look at the data that is generated automatically by their systems.
+# Telecom Customer Intelligence Hub - Data Analysis and Machine Learning
 
-The objective is to provide the client a report to analyse opportunities for growth and make a recommendation on whether TellCo is worth buying or selling.
+This repository contains a comprehensive analysis of customer data for a telecommunications company using data science and machine learning techniques. The project aims to provide actionable insights into customer behavior, engagement, experience, and satisfaction to drive business growth and enhance customer services.
 
-Table of Contents
-Installation
-Project Structure 
-Usage
-Exploratory Data Analysis (EDA) Overview
-Data Cleaning
-Dashboard
-Contributing
-License
-Installation
-To set up this project on your local machine, follow the steps below:
+## Project Overview
 
-Clone the repository:
-git clone https://github.com/brukGit/tenx-w3.git
-cd notebooks
-Checkout branch task-1:
- git checkout task-1
+The objective of this project is to perform an in-depth analysis of telecom customer data to help identify opportunities for improving user experience, engagement, and overall satisfaction. The project also involves building predictive models to gain insights into customer behavior and deploying an interactive dashboard for data visualization and reporting.
 
-3. **Create a virtual environment (optional but recommended)**:
+## Key Features
+
+- **Data Extraction & Preprocessing:** Extraction of telecom customer data from PostgreSQL databases, followed by thorough cleaning, transformation, and formatting for analysis.
+- **Exploratory Data Analysis (EDA):** Insights into customer behavior through univariate, bivariate, and multivariate analyses, including data visualizations using libraries like `matplotlib` and `seaborn`.
+- **User Overview Analysis:** Identification of top handsets, manufacturers, and data usage patterns to understand customer preferences and trends.
+- **User Engagement Analysis:** Calculation of engagement metrics (session frequency, duration, and traffic) to classify customers based on their usage patterns using clustering algorithms.
+- **User Experience Analysis:** Examination of network parameters (TCP retransmission, RTT, throughput) and handset characteristics to assess customer experience.
+- **Customer Satisfaction Analysis:** Development of an engagement and experience score to derive a customer satisfaction score using machine learning models.
+- **Machine Learning Models:** Implementation of clustering (K-means) and regression models to predict customer satisfaction and segment users.
+- **Dashboard Development:** Creation of an interactive and user-friendly dashboard using Streamlit to visualize data insights and provide a detailed analysis.
+- **Model Deployment & Tracking:** Use of Docker and MLFlow for model deployment, tracking, and versioning to monitor changes in the models.
+
+## Repository Structure
+
+- **/src:** Contains the main Python scripts for data processing, analysis, modeling, and dashboard creation.
+- **/notebooks:** Jupyter notebooks for exploratory data analysis, model development, and documentation of insights.
+- **/scripts:** Standalone scripts for various tasks like data extraction, preprocessing, and model training.
+- **/tests:** Unit tests to ensure code robustness and reliability.
+- **/dashboard:** Streamlit dashboard files for visualizing the analysis results.
+- **/data:** Placeholder for datasets used in the project.
+- **/models:** Saved models for customer engagement, experience, and satisfaction analysis.
+- **requirements.txt:** List of Python dependencies for the project.
+- **README.md:** Project overview and usage instructions.
+- **Dockerfile:** Docker configuration for containerizing the application.
+- **.github/workflows:** CI/CD setup using GitHub Actions for automated testing and deployment.
+
+## How to Use
+
+1. **Installation:** Clone the repository and install the dependencies listed in `requirements.txt`.
+2. **Data Extraction:** Use the provided scripts to extract data from the PostgreSQL database.
+3. **Data Analysis:** Run the notebooks or scripts for exploratory data analysis and feature engineering.
+4. **Modeling:** Train models for customer engagement and satisfaction analysis using the scripts in the `/src` directory.
+5. **Dashboard:** Run the Streamlit dashboard to visualize insights.
+6. **Deployment:** Use the Dockerfile to containerize the application and deploy it using Docker or another hosting service.
+
+## Getting Started
+
+- Clone the repository:
   ```bash
-  python3 -m venv venv
-  source venv\Scripts\activate  # On Linux, use `venv/bin/activate`
-
-4. **Install the required dependencies**:
-  ```bash
-  pip install -r requirements.txt
-
-
-## Project Structure
-  ```bash
-      ├── data/                  # Directory containing raw datasets
-      ├── notebooks/             # Jupyter notebooks for EDA and analysis
-      ├── scripts/               # Python scripts for data processing and visualization
-      ├── tests/                 # Unit tests for the project
-      ├── app/                   # Interactive app built with streamlit
-      ├── .github/workflows/     # GitHub Actions for CI/CD
-      ├── .vscode/               # Visual Studio Code settings and configurations
-      ├── requirements.txt       # Python dependencies
-      ├── README.md              # Project documentation (this file)
-      └── LICENSE                # License for the project
-
-
-## Usage
-### Running the Notebooks
-To perform the EDA, navigate to the notebooks/ directory and open the provided Jupyter notebook. The notebook focuses analyzing both user overview and user engagement. 
-  ```bash
-  jupyter notebook notebooks/user_overview.ipynb
-  jupyter notebook notebooks/user_engagement.ipynb
-  jupyter notebook notebooks/user_experience.ipynb
-  jupyter notebook notebooks/user_satisfaction.ipynb
- 
-
-### Running the scripts
-You can use the script 'user_analysis.py' inside scripts directory to run all scripts located in 'src/' directory. Just change directory to scripts and executed the script inside. 
-  ```bash
-  cd scripts
-  python user_analysis.py
-
-### Running the app locally
-Just change directory to 'app' and executed the script inside. 
-  ```bash
-  cd app
-  python main.py
-
-
-### Running Tests
-If you want to run unit tests to ensure that the analysis classes and functions work as expected, run the following command in the root directory:
-  
-```bash
-  python -m unittest discover -s tests
-
-### Raw datasets
-The raw datasets are fetched from a PostgreSQL.
-
-## Exploratory Data Analysis (EDA) Overview
-The EDA conducted in this project covers several key areas:
-
-○	Univariate & Bivariate Analysis: Explored central tendencies, dispersion, and relationships between session metrics (duration, traffic) and applications (DL+UL data).
-
-○	Outlier Detection: Identified and handled outliers in session durations and data volumes.
-
-○	Customer Engagement Metrics: Aggregated session frequency, duration, and total traffic per customer for insights into user behavior.
-
-○	Clustering: Used K-Means (with optimal clusters determined via the elbow method) to segment users by engagement levels.
-
-○	Dimensionality Reduction: Applied PCA to simplify analysis while retaining data variance.
-
-○	Application Engagement: Ranked top 10 users per application by data traffic.
-
-○	Top Application Analysis: Visualized top 3 applications by usage through bar charts.
-
-## Data Cleaning
-Based on the initial analysis, the dataset was cleaned by handling missing values, removing duplicates, and ensuring correct data types.
-
-## Dashboard
-https://telco-tenx-w2.onrender.com/
-
-## Contributing
-Contributions to this project are welcome! If you have suggestions or improvements, feel free to open a pull request or issue on GitHub.
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+  git clone https://github.com/Tesfamichael12/telecom_customer_intelligence_hub.git
+  ```
